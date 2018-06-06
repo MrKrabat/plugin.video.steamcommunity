@@ -206,8 +206,14 @@ def viewVideos(args):
     view.endofdirectory()
 
 
+class ImageGUI(xbmcgui.WindowDialog):
+    def onAction(self, action):
+        if action.getId() >= 9:
+            self.close()
+
+
 def startplayback_images(args):
-    """Plays a image
+    """Shows an image
     """
     # cache path
     sPath = xbmc.translatePath(args._addon.getAddonInfo("profile"))
@@ -219,9 +225,8 @@ def startplayback_images(args):
 
     # display image
     item = xbmcgui.ListItem(getattr(args, "title", "Title not provided"), path=sPath)
-    item.setMimeType("image/jpeg")
-    item.setContentLookup(False)
     xbmcplugin.setResolvedUrl(int(sys.argv[1]), True, item)
+    xbmc.executebuiltin("SlideShow(" + xbmc.translatePath(args._addon.getAddonInfo("profile")) + ")")
 
 
 def startplayback_broadcast(args):
