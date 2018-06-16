@@ -8,7 +8,12 @@ Forum posting: xxx
 ***
 
 What this plugin currently can do:
-- [ ] Coming soon™
+- [x] Filter for language
+- [x] Filter for popular or new
+- [x] Search for game hubs
+- [x] View screenshots, artworks, videos and broadcasts
+
+Broadcasts require Inputstream.Adaptive v2.2.19 or newer.
 ***
 
 _This website and addon is not affiliated with Valve Corporation or Steam._
